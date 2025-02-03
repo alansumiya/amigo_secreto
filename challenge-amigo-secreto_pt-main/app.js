@@ -12,14 +12,27 @@ function adicionarAmigo(){
     limparCampo(); 
     
 }
+let campo = document.getElementById('listaAmigos');
+
 
 function mostrarLista(){
-    let campo = document.getElementById('listaAmigos');
     campo.innerHTML = '';
     for(let i = 0; i < listaNomes.length; i++){
             let item = document.createElement('li');
             item.appendChild(document.createTextNode(listaNomes[i]));
             campo.appendChild(item);
+    }
+}
+
+function sortearAmigo(){
+    if(listaNomes == ''){
+        alert('Lista de amigos está vazia! Por favor preencha a lista');
+    }else{
+    let numAleatorio = parseInt(Math.random() * listaNomes.length);
+    campo.innerHTML = '';
+    document.getElementById('listaAmigos').style.color = "green";
+    campo.innerHTML = `O(A) amigo(a) sorteado(a) é: ${listaNomes[numAleatorio]}`;
+    
     }
 }
 
