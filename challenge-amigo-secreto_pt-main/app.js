@@ -8,8 +8,19 @@ function adicionarAmigo(){
     }else{
     listaNomes.push(nomes);
     }
+    mostrarLista();
     limparCampo(); 
     
+}
+
+function mostrarLista(){
+    let campo = document.getElementById('listaAmigos');
+    campo.innerHTML = '';
+    for(let i = 0; i < listaNomes.length; i++){
+            let item = document.createElement('li');
+            item.appendChild(document.createTextNode(listaNomes[i]));
+            campo.appendChild(item);
+    }
 }
 
 function limparCampo(){
